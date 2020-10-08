@@ -75,7 +75,7 @@ class Opencv < Formula
       -DBUILD_opencv_hdf=OFF
       -DBUILD_opencv_java=OFF
       -DBUILD_opencv_text=ON
-      -DOPENCV_ENABLE_NONFREE=ON
+      -DOPENCV_ENABLE_NONFREE=OFF
       -DOPENCV_EXTRA_MODULES_PATH=#{buildpath}/opencv_contrib/modules
       -DOPENCV_GENERATE_PKGCONFIG=ON
       -DPROTOBUF_UPDATE_FILES=ON
@@ -90,7 +90,7 @@ class Opencv < Formula
       -DWITH_OPENGL=OFF
       -DWITH_QT=OFF
       -DWITH_TBB=ON
-      -DWITH_VTK=ON
+      -DWITH_VTK=OFF
       -DBUILD_opencv_python2=OFF
       -DBUILD_opencv_python3=ON
       -DPYTHON3_EXECUTABLE=#{Formula["python@3.8"].opt_bin}/python3
