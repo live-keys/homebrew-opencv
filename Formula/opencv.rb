@@ -37,22 +37,8 @@ class Opencv < Formula
   depends_on "vtk"
   depends_on "webp"
 
-  resource "contrib" do
-    url "https://github.com/opencv/opencv_contrib/archive/4.4.0.tar.gz"
-    sha256 "a69772f553b32427e09ffbfd0c8d5e5e47f7dab8b3ffc02851ffd7f912b76840"
-
-    # additional vtk 9 support, remove after next release
-    # upstream PR https://github.com/opencv/opencv_contrib/pull/2659
-    patch do
-      url "https://github.com/opencv/opencv_contrib/commit/aace65cc1269629f32874389b33e85fdb7819b02.diff?full_index=1"
-      sha256 "af98e588626cb79e5064995e6cf22f55e40518649cf3eed0d5bd6963f2a19e20"
-    end
-  end
-
   def install
     ENV.cxx11
-
-    resource("contrib").stage buildpath/"opencv_contrib"
 
     # Avoid Accelerate.framework
     ENV["OpenBLAS_HOME"] = Formula["openblas"].opt_prefix
@@ -76,7 +62,6 @@ class Opencv < Formula
       -DBUILD_opencv_java=OFF
       -DBUILD_opencv_text=ON
       -DOPENCV_ENABLE_NONFREE=OFF
-      -DOPENCV_EXTRA_MODULES_PATH=#{buildpath}/opencv_contrib/modules
       -DOPENCV_GENERATE_PKGCONFIG=ON
       -DPROTOBUF_UPDATE_FILES=ON
       -DWITH_1394=OFF
