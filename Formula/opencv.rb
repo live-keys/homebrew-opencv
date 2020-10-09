@@ -72,6 +72,10 @@ class Opencv < Formula
       -DWITH_VTK=OFF
       -DBUILD_opencv_python2=OFF
       -DBUILD_opencv_python3=ON
+      -DBUILD_EXAMPLES=OFF
+      -DBUILD_opencv_apps=OFF
+      -DBUILD_DOCS=OFF
+      -DBUILD_TESTS=OFF
       -DPYTHON3_EXECUTABLE=#{Formula["python@3.8"].opt_bin}/python3
     ]
 
