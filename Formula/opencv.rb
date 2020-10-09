@@ -87,7 +87,7 @@ class Opencv < Formula
     mkdir "build" do
       system "cmake", "..", *args
       inreplace "modules/core/version_string.inc", "#{HOMEBREW_SHIMS_PATH}/mac/super/", ""
-      system "make"
+      system "make", "-j", "3"
       system "make", "install"
       lib.install Dir["lib/*.a"]
       lib.install Dir["3rdparty/**/*.a"]
