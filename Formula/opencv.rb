@@ -28,7 +28,6 @@ class Opencv < Formula
   depends_on "protobuf"
   depends_on "python@3.8"
   depends_on "tbb"
-  depends_on "vtk"
   depends_on "webp"
 
   def install
