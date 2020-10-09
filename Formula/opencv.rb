@@ -12,12 +12,6 @@ class Opencv < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
-    sha256 "b9199ca20007959fff87ca117ca89588d19dcefb8f5166c53ef78217b3b0f886" => :catalina
-    sha256 "cdb1117c188d79f14197d1739fdf2d20aa4e873ba790a164f62c712afdd75f99" => :mojave
-    sha256 "86961a17c5defdf6c2c8311915ce4e9a374a81cd3f7968967ba60b7f76ab6b31" => :high_sierra
-  end
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ceres-solver"
