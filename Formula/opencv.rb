@@ -75,7 +75,7 @@ class Opencv < Formula
       -DBUILD_opencv_apps=OFF
       -DBUILD_DOCS=OFF
       -DBUILD_TESTS=OFF
-      -DPYTHON3_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python3
+      -DPYTHON3_EXECUTABLE=#{Formula["python@3.8"].opt_bin}/python3
     ]
 
 
@@ -107,7 +107,7 @@ class Opencv < Formula
                     "-o", "test"
     assert_equal `./test`.strip, version.to_s
 
-    output = shell_output(Formula["python@3.9"].opt_bin/"python3 -c 'import cv2; print(cv2.__version__)'")
+    output = shell_output(Formula["python@3.8"].opt_bin/"python3 -c 'import cv2; print(cv2.__version__)'")
     assert_equal version.to_s, output.chomp
   end
 end
